@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Modal, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
-import VoltarParaLogin from '../../Components/Buttons/VoltarParaLogin';
-import Loading from '../../Components/Loading/Loading';
+import BottomTab from '../../Components/BottomTab/BottomTab';
+import Header from '../../Components/Header/Header';
 
 export default function Home() {
 
@@ -13,21 +13,15 @@ export default function Home() {
 
     const navigation = useNavigation();
 
-    const handleVoltar = () => {
-        setVisible(true);
-        setTimeout(() => {
-            setVisible(false);
-            navigation.navigate('Login')
-        }, 500)
-    }
-
     return (
         <>
-            <Loading visible={visible} />
-            <View style={styles.container1}>
-                <Text style={styles.txt}>HOMEPAGE</Text>
-                <VoltarParaLogin onpress={handleVoltar} />
+            <Header />
+            <View style={styles.container}>
+                <View style={styles.welcome}>
+                    <Text style={styles.txt}>Bem vindo(a), {user.nameid}!</Text>
+                </View>
             </View>
+            <BottomTab />
         </>
     );
 }
@@ -40,18 +34,29 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
 
-    container1: {
+    welcome: {
+        width: '100%',
+        flex: 0.07,
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        borderColor: '#85929E'
+    },
+
+    container: {
         flexDirection: 'column',
         flex: 1,
-        backgroundColor: '#F6F8FA',
+        backgroundColor: '#ECF0F1',
         alignItems: 'center',
         //justifyContent: 'center',
     },
 
     txt: {
-        fontSize: 32,
-        color: 'black',
-        marginTop: 220,
+        fontSize: 23,
+        padding: 10,
+        color: '#5F6A6A',
         alignItems: 'center',
         padding: 10,
         marginLeft: -25,

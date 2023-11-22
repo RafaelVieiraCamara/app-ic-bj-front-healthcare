@@ -6,7 +6,7 @@ export default function Loading({ visible }) {
             <View style = {{flex:1, alignItems: 'center', justifyContent: 'center'}}>
                 <ActivityIndicator
                 size = 'large'
-                color= '#E8E7E7'
+                color= '#5271FF'
                 animating={true}
                  />   
             </View>
