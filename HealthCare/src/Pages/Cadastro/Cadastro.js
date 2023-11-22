@@ -158,7 +158,11 @@ const styles = StyleSheet.create({
         marginTop: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 15
+        gap: 15,
+        backgroundColor: '#ECF0F1',
+        borderRadius: 15,
+        padding: 10,
+        height: 600    
     },
 
     input: {

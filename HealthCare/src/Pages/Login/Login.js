@@ -7,7 +7,6 @@ import { useUser } from '../../Context/UserContext';
 import CadastrarButton from '../../Components/Buttons/CadastrarButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 export default function Login() {
 
     const [username, setUsername] = useState('');
@@ -21,7 +20,6 @@ export default function Login() {
     const navigation = useNavigation();
 
     const entrar = () => {
-
         if (username == '' || password == '') {
             setVisible(true);
             setTimeout(() => {
@@ -110,7 +108,7 @@ const styles = StyleSheet.create({
     heartIcon: {
         fontWeight: 'bold',
         fontSize: 35,
-        color: '#11A99A',
+        color: '#5271FF',
         marginTop: 220,
         alignItems: 'center',
         marginRight: 15
@@ -143,14 +141,15 @@ const styles = StyleSheet.create({
     body: {
         marginTop: 40,
         marginBottom: 10,
+        height: 350,
+        width: 340,
         gap: 15,
-        //borderRadius: 15,
         height: 340,
-        //marginLeft: 8,
-        //flex: 1,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#ECF0F1',
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 15,
+        padding: 10
     },
 
     input: {
