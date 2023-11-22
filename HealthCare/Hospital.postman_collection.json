@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "b8fa62d7-befb-48b8-988b-949bbfbc76b1",
+		"name": "Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26594995",
+		"_collection_link": "https://www.postman.com/orange-capsule-970600/workspace/saude-api/collection/26594995-b8fa62d7-befb-48b8-988b-949bbfbc76b1?action=share&source=collection_link&creator=26594995"
+	},
+	"item": [
+		{
+			"name": "Create Hospital",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTUzNGU4ZTU2YzU3MTUyNmYyYTA1NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA5NjM0NywiZXhwIjoxNzAwMzU1NTQ3fQ.kvgaXQz1cQtMkNqgD-BKXethMIjtY8s4JYZnPmrb3Pc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nameid\": \"Hospital das Nações\",\r\n\"address\":\r\n{\r\n            \"rua\": \"Raphael Papa\",\r\n            \"numero\": \"10\",\r\n\t        \"Bairro\": \"Jardim Social\",\r\n            \"Cidade\": \"Curitiba\",\r\n            \"Estado\": \"Paraná\",\r\n            \"CEP\": \"82530-190\"\r\n        },\r\n\"emails\": \"hospitalnacoes@gmail.com\",\r\n\"phone\": \"4133069000\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:5000/api/hospitals/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Hospital",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRlZmYyNjM4YThjYTU2NmVmOWY5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA3MTI0MywiZXhwIjoxNzAwMzMwNDQzfQ.wdXUcplgvYL2P_fI4q5ngMdaeX8QAK4E-pRgzzFOxoc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/hospitals/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"hospitals",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "655507dd63914d98919978bf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Hospital",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:5000/api/hospitals/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Hospital",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRlZmYyNjM4YThjYTU2NmVmOWY5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA3MTI0MywiZXhwIjoxNzAwMzMwNDQzfQ.wdXUcplgvYL2P_fI4q5ngMdaeX8QAK4E-pRgzzFOxoc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nameid\": \"Hospital das Nações2\",\r\n\"address\":\r\n{\r\n            \"rua\": \"Raphael Papa\",\r\n            \"numero\": \"10\",\r\n\t        \"Bairro\": \"Jardim Social\",\r\n            \"Cidade\": \"Curitiba\",\r\n            \"Estado\": \"Paraná\",\r\n            \"CEP\": \"82530-190\"\r\n        },\r\n\"emails\": \"hospitalnacoes@gmail.com\",\r\n\"phone\": \"4133069000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:5000/api/hospitals/655507dd63914d98919978bf"
+			},
+			"response": []
+		}
+	]
+}

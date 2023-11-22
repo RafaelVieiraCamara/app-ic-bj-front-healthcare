@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "332db804-f034-4694-938f-6e76a2bfe20f",
+		"name": "Doctor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26594995",
+		"_collection_link": "https://www.postman.com/orange-capsule-970600/workspace/saude-api/collection/26594995-332db804-f034-4694-938f-6e76a2bfe20f?action=share&source=collection_link&creator=26594995"
+	},
+	"item": [
+		{
+			"name": "Create Doctor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTUzNGU4ZTU2YzU3MTUyNmYyYTA1NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA5NjQwOSwiZXhwIjoxNzAwMzU1NjA5fQ.eomfysRlwxy48FdIEq6-nYV3AN-op3kfSPMP-9Qn5bw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameid\":\"Carlos Eduardo\",\r\n    \"crm\":\"91256-SP\",\r\n    \"phone\":\"2199999999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:5000/api/doctors/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Doctor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRlZmYyNjM4YThjYTU2NmVmOWY5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA2NjIyNCwiZXhwIjoxNzAwMzI1NDI0fQ.mZ0HrsF9wk69e-Z4zT8Kkg6QHQXVKosPQ_csCsjSles",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/doctors/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"doctors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6554f056638a8ca566ef9fa0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Doctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:5000/api/doctors/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Doctor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRlZmYyNjM4YThjYTU2NmVmOWY5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMDA2NjIyNCwiZXhwIjoxNzAwMzI1NDI0fQ.mZ0HrsF9wk69e-Z4zT8Kkg6QHQXVKosPQ_csCsjSles",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6554f3dbf02f9b098101a3a4\",\r\n    \"nameid\": \"Paola Bra sei lá o que\",\r\n    \"crm\": \"99991-sp\",\r\n    \"phone\": \"2299999999\",\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:5000/api/doctors/6554f3dbf02f9b098101a3a4"
+			},
+			"response": []
+		}
+	]
+}
