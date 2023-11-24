@@ -27,7 +27,11 @@ export const UserProvider = ({ children }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setUser({ nameid: data.nameid });
+        setUser({
+          nameid: data.nameid,
+          username: data.username,
+          emails: data.emails
+        });
         setTimeout(() => {
           navigation.navigate('Home');
         }, 500)
