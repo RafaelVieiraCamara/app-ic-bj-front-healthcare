@@ -24,17 +24,64 @@ const MenuButton = () => {
         setModalVisible(!modalVisible);
     }
 
+
+    const handlePerfil = () => {
+        setVisible(true);
+        setTimeout(() => {
+            setVisible(false);
+            setModalVisible(false);
+            navigation.navigate('Perfil');
+        }, 800)
+    }
+
+    const handleHospitais = () => {
+        setVisible(true);
+        setTimeout(() => {
+            setVisible(false);
+            setModalVisible(false);
+            navigation.navigate('Hospitais');
+        }, 800)
+    }
+
+    const handleAgendar = () => {
+        setVisible(true);
+        setTimeout(() => {
+            setVisible(false);
+            setModalVisible(false);
+            navigation.navigate('Agendar');
+        }, 800)
+    }
+
+    const handleContatos = () => {
+        setVisible(true);
+        setTimeout(() => {
+            setVisible(false);
+            setModalVisible(false);
+            navigation.navigate('Contatos');
+        }, 800)
+    }
+
+    const handleAjuda = () => {
+        setVisible(true);
+        setTimeout(() => {
+            setVisible(false);
+            setModalVisible(false);
+            navigation.navigate('Ajuda');
+        }, 800)
+    }
+
     const handleSair = () => {
         setVisible(true);
         setTimeout(() => {
             setVisible(false);
+            setModalVisible(false);
             navigation.navigate('Login');
         }, 800)
     }
 
     return (
         <>
-            <Loading visible={visible}/>
+
             <TouchableOpacity onPress={toggleModal}>
                 <Icon name="menu" style={styles.icon1} size={30} />
             </TouchableOpacity>
@@ -46,6 +93,7 @@ const MenuButton = () => {
                 visible={modalVisible}
                 onRequestClose={toggleModal}
             >
+                <Loading visible={visible} />
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
 
@@ -57,19 +105,17 @@ const MenuButton = () => {
                         </View>
 
                         <View style={styles.modalBody}>
-
-
-                            <TouchableOpacity style={styles.options}>
+                            <TouchableOpacity onPressIn={handlePerfil} style={styles.options}>
                                 <AntDesign name="user" style={styles.icons} size={30} />
                                 <Text style={styles.optionsText}>Meu Perfil</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.options}>
+                            <TouchableOpacity onPressIn={handleHospitais} style={styles.options}>
                                 <FontAwesome name="hospital-o" style={styles.icons} size={30} />
                                 <Text style={styles.optionsText}>Hospitais Próximos</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.options}>
+                            <TouchableOpacity onPressIn={handleAgendar} style={styles.options}>
                                 <SimpleLineIcons name="notebook" style={styles.icons} size={30} />
                                 <Text style={styles.optionsText}>Agendar Consulta</Text>
                             </TouchableOpacity>
@@ -89,12 +135,12 @@ const MenuButton = () => {
                                 <Text style={styles.optionsText}>Dicas de Saúde</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.options}>
+                            <TouchableOpacity onPressIn={handleContatos} style={styles.options}>
                                 <MaterialIcons name="phone-enabled" style={styles.icons} size={30} />
                                 <Text style={styles.optionsText}>Contatos</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.options}>
+                            <TouchableOpacity onPressIn={handleAjuda} style={styles.options}>
                                 <Entypo name="help" style={styles.icons} size={30} />
                                 <Text style={styles.optionsText}>Ajuda</Text>
                             </TouchableOpacity>
@@ -104,9 +150,6 @@ const MenuButton = () => {
                                 <Text style={styles.optionsText}>Sair</Text>
                             </TouchableOpacity>
                         </View>
-
-
-
                     </View>
                 </View>
             </Modal>

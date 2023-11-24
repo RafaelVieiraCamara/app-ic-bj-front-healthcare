@@ -4,36 +4,29 @@ import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
 import BottomTab from '../../Components/BottomTab/BottomTab';
 import Header from '../../Components/Header/Header';
-import HospitalsList from '../../Components/Flatlist/HospitalsList';
-import EspecialidadesList from '../../Components/Flatlist/Especialidades';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function Home() {
+export default function Perfil() {
 
     const { user } = useUser();
 
-    const [visible, setVisible] = useState(false);
-
     const navigation = useNavigation();
-
-    const data = [
-        { name: 'Especialidade 1',  },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        // Adicione mais imagens conforme necessário
-      ];
 
     return (
         <>
             <Header />
             <View style={styles.container}>
                 <View style={styles.title}>
-                    <Text style={styles.txt}>Bem vindo(a), {user.nameid}!</Text>
+                    <AntDesign name="user" style={styles.icons} size={30} />
+                    <Text style={styles.txt}>Suas Informações</Text>
                 </View>
 
-                <HospitalsList style={styles.hospitalsList}/>
-                <EspecialidadesList data={data}/>
+                <View style={styles.body}>
+                    <Text style={styles.bodyText}>Nome: {user.nameid}</Text>
+                    <Text style={styles.bodyText}>Username: {user.username}</Text>
+                    <Text style={styles.bodyText}>E-mail: {user.emails} </Text>
+                    <Text style={styles.bodyText}>Idade: 20 anos</Text>
+                </View>
             </View>
             <BottomTab />
         </>
@@ -50,25 +43,23 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        flex: 0.07,
+        //height: 40,
+        flex: 0.08,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
         borderBottomWidth: 1,
         borderTopWidth: 1,
-        borderColor: '#85929E'
+        borderColor: '#85929E',
+        flexDirection: 'row'
     },
 
     container: {
         flexDirection: 'column',
         flex: 1,
         backgroundColor: '#ECF0F1',
-        //alignItems: 'center',
+        alignItems: 'center',
         //justifyContent: 'center',
-    },
-
-    hospitalsList: {
-        flex: 0.1
     },
 
     txt: {
@@ -77,7 +68,8 @@ const styles = StyleSheet.create({
         color: '#5F6A6A',
         alignItems: 'center',
         padding: 10,
-        marginLeft: -25,
+        marginLeft: 0,
+        marginTop: 15,
         height: 70,
         fontWeight: 'bold',
         textShadowOffset: { width: 2, height: 2 },
@@ -86,9 +78,26 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        //flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        flex: 1,
+        alignItems: 'left',
+        marginTop: 100,
+        gap: 20
+        //justifyContent: 'center',
+        //alignItems: 'center'
+    },
+
+    bodyText: {
+        width: 300,
+        height: 50,
+        //margin: 9,
+        paddingHorizontal: 10,
+        backgroundColor: 'white',
+        color: '#5F6A6A',
+        borderColor: '#5F6A6A',
+        borderWidth: 1,
+        borderRadius: 12,
+        fontSize: 20,
+        padding: 10
     },
 
 });

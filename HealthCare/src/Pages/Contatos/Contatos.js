@@ -4,10 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
 import BottomTab from '../../Components/BottomTab/BottomTab';
 import Header from '../../Components/Header/Header';
-import HospitalsList from '../../Components/Flatlist/HospitalsList';
-import EspecialidadesList from '../../Components/Flatlist/Especialidades';
 
-export default function Home() {
+export default function Contatos() {
 
     const { user } = useUser();
 
@@ -15,25 +13,13 @@ export default function Home() {
 
     const navigation = useNavigation();
 
-    const data = [
-        { name: 'Especialidade 1',  },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        // Adicione mais imagens conforme necessário
-      ];
-
     return (
         <>
             <Header />
             <View style={styles.container}>
                 <View style={styles.title}>
-                    <Text style={styles.txt}>Bem vindo(a), {user.nameid}!</Text>
+                    <Text style={styles.txt}>Nossos Contatos</Text>
                 </View>
-
-                <HospitalsList style={styles.hospitalsList}/>
-                <EspecialidadesList data={data}/>
             </View>
             <BottomTab />
         </>
@@ -63,12 +49,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         flex: 1,
         backgroundColor: '#ECF0F1',
-        //alignItems: 'center',
+        alignItems: 'center',
         //justifyContent: 'center',
-    },
-
-    hospitalsList: {
-        flex: 0.1
     },
 
     txt: {
@@ -86,7 +68,7 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        //flex: 1,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
