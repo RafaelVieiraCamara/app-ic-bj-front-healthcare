@@ -25,7 +25,7 @@ export default function Perfil() {
                     <Text style={styles.bodyText}>Nome: {user.nameid}</Text>
                     <Text style={styles.bodyText}>Username: {user.username}</Text>
                     <Text style={styles.bodyText}>E-mail: {user.emails} </Text>
-                    <Text style={styles.bodyText}>Idade: 20 anos</Text>
+                    {/* <Text style={styles.bodyText}>Idade: 20 anos</Text> */}
                 </View>
             </View>
             <BottomTab />
@@ -90,16 +90,15 @@ const styles = StyleSheet.create({
     },
 
     bodyText: {
-        width: 300,
+        width: 340,
         height: 50,
-        //margin: 9,
         paddingHorizontal: 10,
         backgroundColor: 'white',
         color: '#5F6A6A',
         borderColor: '#5F6A6A',
         borderWidth: 1,
         borderRadius: 12,
-        fontSize: 20,
+        fontSize: 17,
         padding: 10
     },
 
