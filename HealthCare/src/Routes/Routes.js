@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 export default function Routes() {
     return (
         <Stack.Navigator>
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="Login"
                 component={Login}
                 options={{ headerShown: false }}
@@ -25,7 +25,7 @@ export default function Routes() {
                 name="Cadastro"
                 component={Cadastro}
                 options={{ headerShown: false }}
-            /> */}
+            />
             <Stack.Screen
                 name="Home"
                 component={Home}

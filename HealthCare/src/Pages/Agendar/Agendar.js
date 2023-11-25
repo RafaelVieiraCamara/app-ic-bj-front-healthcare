@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
 import BottomTab from '../../Components/BottomTab/BottomTab';
 import Header from '../../Components/Header/Header';
+import EspecialidadesList from '../../Components/Listas/EspecialidadesList';
 
 export default function Agendar() {
 
@@ -13,6 +14,13 @@ export default function Agendar() {
 
     const navigation = useNavigation();
 
+    const data = [
+        { id: '1', name: 'Cardiologia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/cardio.png' },
+        { id: '2', name: 'Ortopedia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/orto.png' },
+        { id: '3', name: 'Pediatria', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/pedi.png' },
+        { id: '4', name: 'Neurologia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/neuro.png' },
+    ];
+
     return (
         <>
             <Header />
@@ -20,6 +28,11 @@ export default function Agendar() {
                 <View style={styles.title}>
                     <Text style={styles.txt}>Escolha uma Especialidade</Text>
                 </View>
+
+                <View style={styles.body}>
+                    <EspecialidadesList data={data} />
+                </View>
+
             </View>
             <BottomTab />
         </>
@@ -36,7 +49,7 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        flex: 0.07,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -50,7 +63,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#ECF0F1',
         alignItems: 'center',
-        //justifyContent: 'center',
+        justifyContent: 'center',
     },
 
     txt: {
@@ -70,7 +83,7 @@ const styles = StyleSheet.create({
     body: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
 
 });

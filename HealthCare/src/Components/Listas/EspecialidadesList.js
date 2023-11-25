@@ -1,21 +1,25 @@
 import React from 'react';
 import { View, FlatList, Image, Text, StyleSheet } from 'react-native';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const EspecialidadesList = ({ data }) => {
 
+
+
     return (
         <>
-            <Text style={styles.title}>Especialidades Disponíveis </Text>
             <View style={styles.container}>
                 <FlatList
                     style={styles.flatList}
                     data={data}
                     keyExtractor={(item, index) => index.toString()}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
+                    vertical
+                    showsHorizontalScrollIndicator={true}
+                    numColumns={2}
                     renderItem={({ item }) => (
+
                         <View style={styles.itemContainer}>
-                            <Image source={item.image} style={styles.image} />
+                            <Image source={{ uri: item.url }} style={styles.image} />
                             <Text style={styles.imageName}>{item.name}</Text>
                         </View>
                     )}
@@ -27,33 +31,49 @@ const EspecialidadesList = ({ data }) => {
 };
 
 const styles = StyleSheet.create({
+
     container: {
-        flex: 0.43,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 30,
-        //backgroundColor: '#5271FF'
+        marginTop: -50,
+
     },
 
     itemContainer: {
+        marginTop: 40,
         alignItems: 'center',
-        marginRight: 10,
+        //justifyContent: 'center'
     },
 
     image: {
-        width: 150,
-        height: 150,
-        borderRadius: 10,
+        width: 130,
+        height: 130,
+        borderRadius: 15,
+        marginRight: 10,
+        marginLeft: 10,
+        marginTop: 40,
+        borderColor: 'grey',
+        borderWidth: 2
     },
 
     imageName: {
-        marginTop: 5,
-        textAlign: 'center',
+        fontSize: 18,
+        marginTop: 10,
+        color: '#5F6A6A',
+        fontWeight: 'bold',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 7,
+        textShadowColor: '#B3B6B7',
     },
 
     title: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 20,
+        //gap: 5
+    },
+
+    titleText: {
         fontSize: 20,
-        marginTop: 40,
+        marginTop: 20,
         marginBottom: -20,
         marginLeft: 10,
         color: '#5F6A6A',
@@ -64,8 +84,13 @@ const styles = StyleSheet.create({
     },
 
     flatList: {
-        width: '100%',
-        height: 200,
+        
+    },
+
+    icon: {
+        marginTop: 15,
+        marginLeft: 10,
+        color: '#5F6A6A',
     },
 });
 

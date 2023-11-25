@@ -17,7 +17,7 @@ export default function Perfil() {
             <Header />
             <View style={styles.container}>
                 <View style={styles.title}>
-                    <AntDesign name="user" style={styles.icons} size={30} />
+                    <AntDesign name="user" style={styles.icon} size={30} />
                     <Text style={styles.txt}>Suas Informações</Text>
                 </View>
 
@@ -43,8 +43,7 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        //height: 40,
-        flex: 0.08,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -52,6 +51,10 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderColor: '#85929E',
         flexDirection: 'row'
+    },
+
+    icon: {
+        color: '#5F6A6A',
     },
 
     container: {

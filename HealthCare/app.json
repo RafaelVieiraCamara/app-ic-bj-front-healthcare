@@ -18,10 +18,26 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "icon": "./assets/androidIcon.png",
+      "config": {
+        "permissions": [
+          "INTERNET"
+        ],
+        "package": "healthcare",
+        "versionCode": 2,
+        "supportsTablet": true,
+        "cleartextTraffic": {
+          "permitted": true
+        },
+        "adaptiveIcon": {
+          "foregroundImage": "./assets/adaptive-icon.png",
+          "backgroundColor": "#ffffff"
+        }
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      },
+      "package": "com.alexandrevpacheco.HealthCare"
     },
     "web": {
       "favicon": "./assets/favicon.png"

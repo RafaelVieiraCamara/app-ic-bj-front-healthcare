@@ -17,7 +17,7 @@ export default function Agenda() {
         <>
             <Header />
             <View style={styles.container}>
-                <View style={styles.welcome}>
+                <View style={styles.title}>
                     <Text style={styles.txt}>Consultas Agendadas</Text>
                 </View>
 
@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
 
-    welcome: {
+    title: {
         width: '100%',
-        flex: 0.07,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
         padding: 10,
         marginLeft: 15,
         marginTop: 20,
-        height: 70,
         fontWeight: 'bold',
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 7,

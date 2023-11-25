@@ -20,6 +20,12 @@ export default function Contatos() {
                 <View style={styles.title}>
                     <Text style={styles.txt}>Nossos Contatos</Text>
                 </View>
+
+                <View style={styles.body}>
+                    <Text style={styles.bodyText}>(24) 99999-9999</Text>
+                    <Text style={styles.bodyText}>(24) 9888-8888</Text>
+                    <Text style={styles.bodyText}>(24) 97777-7777</Text>
+                </View>
             </View>
             <BottomTab />
         </>
@@ -36,7 +42,7 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        flex: 0.07,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -67,8 +73,23 @@ const styles = StyleSheet.create({
         textShadowColor: '#B3B6B7',
     },
 
+    bodyText: {
+        fontSize: 18,
+        padding: 10,
+        color: '#5F6A6A',
+        alignItems: 'center',
+        padding: 10,
+        //marginLeft: -25,
+        height: 70,
+        fontWeight: 'bold',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 7,
+        textShadowColor: '#B3B6B7',
+    },
+
     body: {
-        flex: 1,
+        marginTop: 30,
+        //flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },

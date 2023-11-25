@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
 import BottomTab from '../../Components/BottomTab/BottomTab';
 import Header from '../../Components/Header/Header';
-import HospitalsList from '../../Components/Flatlist/HospitalsList';
-import EspecialidadesList from '../../Components/Flatlist/Especialidades';
+import HospitalsFlatList from '../../Components/Flatlist/HospitalsFlatList';
+import EspecialidadesFlatList from '../../Components/Flatlist/EspecialidadesFlatList';
 
 export default function Home() {
 
@@ -16,12 +16,10 @@ export default function Home() {
     const navigation = useNavigation();
 
     const data = [
-        { name: 'Especialidade 1',  },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        { name: 'Especialidade 2', },
-        // Adicione mais imagens conforme necessário
+        { id: '1', name: 'Cardiologia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/cardio.png'},
+        { id: '2', name: 'Ortopedia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/orto.png'},
+        { id: '3', name: 'Pediatria', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/pedi.png'},
+        { id: '4', name: 'Neurologia', url: 'https://raw.githubusercontent.com/RafaelVieiraCamara/app-ic-bj-front-healthcare/0ee1436e406c80dfa452acaf5d6a42c30cb839d4/HealthCare/assets/especialidades/neuro.png'},
       ];
 
     return (
@@ -31,9 +29,8 @@ export default function Home() {
                 <View style={styles.title}>
                     <Text style={styles.txt}>Bem vindo(a), {user.nameid}!</Text>
                 </View>
-
-                <HospitalsList style={styles.hospitalsList}/>
-                <EspecialidadesList data={data}/>
+                <HospitalsFlatList style={styles.hospitalsList}/>
+                <EspecialidadesFlatList data={data}/>
             </View>
             <BottomTab />
         </>
@@ -50,7 +47,7 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        flex: 0.07,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -78,7 +75,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         marginLeft: -25,
-        height: 70,
+        //height: 80,
+        //marginTop:10,
         fontWeight: 'bold',
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 7,
