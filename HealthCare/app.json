@@ -1,13 +1,18 @@
 {
   "expo": {
     "name": "HealthCare",
+    "description": "App de saúde.",
+    "icon": "./assets/androidIcon.png",
     "slug": "HealthCare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,13 +23,31 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "icon": "./assets/androidIcon.png",
+      "config": {
+        "permissions": [
+          "INTERNET"
+        ],
+        "package": "healthcare",
+        "versionCode": 1,
+        "supportsTablet": true,
+        "cleartextTraffic": {
+          "permitted": true
+        },
+        "adaptiveIcon": {
+          "foregroundImage": "./assets/adaptive-icon.png",
+          "backgroundColor": "#ffffff"
+        }
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      },
+      "package": "com.alexandrevpacheco.HealthCare"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "extra": {
+      "eas": {
+        "projectId": "beba8746-405d-4b47-9b52-3c38f97649d8"
+      }
     }
   }
 }

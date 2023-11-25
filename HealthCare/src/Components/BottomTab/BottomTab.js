@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 
     container: {
         backgroundColor: '#5271FF',
-        flex: 0.2,
+        flex: 0.12,
         borderTopLeftRadius: 5,
         borderTopRightRadius: 5,
         opacity: 0.9

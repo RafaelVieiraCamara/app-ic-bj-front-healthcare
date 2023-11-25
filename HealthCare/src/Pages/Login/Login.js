@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     },
 
     input: {
-        width: 300,
+        width: 260,
         height: 50,
         //margin: 9,
         paddingHorizontal: 10,

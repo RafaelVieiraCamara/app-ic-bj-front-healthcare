@@ -83,7 +83,7 @@ const MenuButton = () => {
         <>
 
             <TouchableOpacity onPress={toggleModal}>
-                <Icon name="menu" style={styles.icon1} size={30} />
+                <Icon name="menu" style={styles.icon1} size={35} />
             </TouchableOpacity>
 
             <Modal
@@ -99,7 +99,7 @@ const MenuButton = () => {
 
                         <View style={styles.modalTitle}>
                             <TouchableOpacity onPressIn={toggleModal}>
-                                <Icon name="menu" style={styles.icon2} size={30} />
+                                <Icon name="menu" style={styles.icon2} size={35} />
                             </TouchableOpacity>
                             <Text style={styles.modalTitleText}>Opções</Text>
                         </View>
@@ -164,13 +164,13 @@ export default MenuButton
 const styles = StyleSheet.create({
 
     icon1: {
-        backgroundColor: '#5271FF',
+        //backgroundColor: '#5271FF',
         marginLeft: 20,
         color: 'white'
     },
 
     icon2: {
-        backgroundColor: '#5271FF',
+        //backgroundColor: '#5271FF',
         color: 'white'
     },
 

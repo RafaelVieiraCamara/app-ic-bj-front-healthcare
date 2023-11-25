@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 import axios from 'axios';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const HospitalsList = () => {
+const HospitalsFlatList = () => {
     const [hospitals, setHospitals] = useState([]);
 
     useEffect(() => {
@@ -43,6 +43,7 @@ const HospitalsList = () => {
                     horizontal
                     contentContainerStyle={styles.flatListContent}
                     style={styles.flatList}
+                    showsHorizontalScrollIndicator={true}
                 />
             </View>
         </>
@@ -63,8 +64,11 @@ const styles = StyleSheet.create({
 
     title: {
         flexDirection: 'row',
-        //justifyContent: 'center',
+        justifyContent: 'center',
         marginTop: 20,
+        //backgroundColor: 'white',
+       // borderRadius: 30,
+        //width: 250
         //gap: 5
     },
 
@@ -76,15 +80,15 @@ const styles = StyleSheet.create({
 
     hospitalText: {
         marginTop: 15,
-        fontsize: 20,
+        fontSize: 20,
         fontWeight: 'bold',
-        widht: 20,
+        //width: 20,
         color: '#5F6A6A',
         fontWeight: 'bold',
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 7,
         textShadowColor: '#B3B6B7',
-        marginLeft: 30
+        marginLeft: 20
     },
 
     listItem: {
@@ -94,8 +98,8 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: 150,
-        height: 150,
+        width: 120,
+        height: 120,
         borderRadius: 80,
         borderWidth: 3,
         borderColor: '#5271FF',
@@ -129,9 +133,10 @@ const styles = StyleSheet.create({
     flatList: {
         width: '100%',
         height: 200,
+        marginLeft: -15
         // borderBottomWidth: 2,
         // borderTopWidth: 2,
     },
 });
 
-export default HospitalsList;
+export default HospitalsFlatList;

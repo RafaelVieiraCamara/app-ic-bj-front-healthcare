@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useUser } from '../../Context/UserContext';
 import BottomTab from '../../Components/BottomTab/BottomTab';
 import Header from '../../Components/Header/Header';
+import HospitalsList from '../../Components/Listas/HospitalsList';
 
 export default function Hospitais() {
 
@@ -19,6 +20,10 @@ export default function Hospitais() {
             <View style={styles.container}>
                 <View style={styles.title}>
                     <Text style={styles.txt}>Hospitais Próximos</Text>
+                </View>
+
+                <View style={styles.body}>
+                    <HospitalsList />
                 </View>
             </View>
             <BottomTab />
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
 
     title: {
         width: '100%',
-        flex: 0.07,
+        flex: 0.15,
         backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
